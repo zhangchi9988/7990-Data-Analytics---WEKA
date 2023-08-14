@@ -1,0 +1,16 @@
+@relation NonLinearS
+
+@attribute x numeric
+@attribute y numeric
+@attribute class {class1,class2}
+
+@data
+6,5,class1
+6,6,class1
+6,7,class1
+5,8,class1
+7,8,class1
+8,8,class1
+8,6,class1
+7,5,class1
+6,8,class1

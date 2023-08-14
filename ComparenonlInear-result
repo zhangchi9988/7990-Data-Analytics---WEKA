@@ -1,0 +1,59 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 2 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     NonLinearS
+Instances:    20
+Attributes:   3
+              x
+              y
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: class1, class2
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0001 * x
+ +      -0.0001 * y
+ +       1.0005
+
+Number of kernel evaluations: 209 (97.107% cached)
+
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances           8               40      %
+Incorrectly Classified Instances        12               60      %
+Kappa statistic                         -0.2371
+Mean absolute error                      0.6   
+Root mean squared error                  0.7746
+Relative absolute error                120      %
+Root relative squared error            154.2269 %
+Total Number of Instances               20     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.222    0.455    0.286      0.222    0.250      -0.242   0.384     0.413     class1
+                 0.545    0.778    0.462      0.545    0.500      -0.242   0.384     0.502     class2
+Weighted Avg.    0.400    0.632    0.382      0.400    0.387      -0.242   0.384     0.462     
+
+=== Confusion Matrix ===
+
+ a b   <-- classified as
+ 2 7 | a = class1
+ 5 6 | b = class2
+

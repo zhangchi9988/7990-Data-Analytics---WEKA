@@ -1,0 +1,74 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 2 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.RBFKernel -C 250007 -G 0.01" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     NonLinearS
+Instances:    20
+Attributes:   3
+              x
+              y
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  RBF Kernel: K(x,y) = exp(-0.01*(x-y)^2)
+
+Classifier for classes: class1, class2
+
+BinarySMO
+
+ -       0.7904 * <6 7 > * X]
+ +       1      * <12 4 > * X]
+ -       1      * <8 6 > * X]
+ +       0.994  * <3 13 > * X]
+ +       1      * <1 3 > * X]
+ +       1      * <12 5 > * X]
+ +       1      * <6 0 > * X]
+ -       1      * <6 8 > * X]
+ -       1      * <7 5 > * X]
+ +       0.7481 * <12 13 > * X]
+ +       0.0754 * <1 0 > * X]
+ +       0.9729 * <6 14 > * X]
+ -       1      * <6 5 > * X]
+ -       1      * <7 8 > * X]
+ -       1      * <5 8 > * X]
+ +       1      * <2 10 > * X]
+ -       1      * <8 8 > * X]
+ +       1.5624
+
+Number of support vectors: 17
+
+Number of kernel evaluations: 210 (86.981% cached)
+
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          18               90      %
+Incorrectly Classified Instances         2               10      %
+Kappa statistic                          0.802 
+Mean absolute error                      0.1   
+Root mean squared error                  0.3162
+Relative absolute error                 20      %
+Root relative squared error             62.9629 %
+Total Number of Instances               20     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.182    0.818      1.000    0.900      0.818    0.909     0.818     class1
+                 0.818    0.000    1.000      0.818    0.900      0.818    0.909     0.918     class2
+Weighted Avg.    0.900    0.082    0.918      0.900    0.900      0.818    0.909     0.873     
+
+=== Confusion Matrix ===
+
+ a b   <-- classified as
+ 9 0 | a = class1
+ 2 9 | b = class2
+
