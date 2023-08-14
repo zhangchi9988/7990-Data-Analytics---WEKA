@@ -1,0 +1,65 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 2 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     weather
+Instances:    14
+Attributes:   5
+              outlook
+              temperature
+              humidity
+              windy
+Ignored:
+              play
+Test mode:    Classes to clusters evaluation on training data
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Within cluster sum of squared errors: 11.237456311387234
+
+Initial starting points (random):
+
+Cluster 0: rainy,75,80,FALSE
+Cluster 1: overcast,64,65,TRUE
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                           Cluster#
+Attribute      Full Data          0          1
+                  (14.0)      (9.0)      (5.0)
+==============================================
+outlook            sunny      sunny   overcast
+temperature      73.5714    75.8889       69.4
+humidity         81.6429    84.1111       77.2
+windy              FALSE      FALSE       TRUE
+
+
+
+
+Time taken to build model (full training data) : 0 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       9 ( 64%)
+1       5 ( 36%)
+
+
+Class attribute: play
+Classes to Clusters:
+
+ 0 1  <-- assigned to cluster
+ 6 3 | yes
+ 3 2 | no
+
+Cluster 0 <-- yes
+Cluster 1 <-- no
+
+Incorrectly clustered instances :	6.0	 42.8571 %
+
