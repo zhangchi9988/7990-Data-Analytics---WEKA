@@ -1,0 +1,61 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 10 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     labor-neg-data
+Instances:    57
+Attributes:   17
+              duration
+              wage-increase-first-year
+              wage-increase-second-year
+              wage-increase-third-year
+              cost-of-living-adjustment
+              working-hours
+              pension
+              standby-pay
+              shift-differential
+              education-allowance
+              statutory-holidays
+              vacation
+              longterm-disability-assistance
+              contribution-to-dental-plan
+              bereavement-assistance
+              contribution-to-health-plan
+              class
+Test mode:    split 70.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 10 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances          16               94.1176 %
+Incorrectly Classified Instances         1                5.8824 %
+Kappa statistic                          0.8661
+Mean absolute error                      0.2776
+Root mean squared error                  0.3084
+Relative absolute error                 60.6098 %
+Root relative squared error             64.5421 %
+Total Number of Instances               17     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.833    0.000    1.000      0.833    0.909      0.874    1.000     1.000     bad
+                 1.000    0.167    0.917      1.000    0.957      0.874    1.000     1.000     good
+Weighted Avg.    0.941    0.108    0.946      0.941    0.940      0.874    1.000     1.000     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  5  1 |  a = bad
+  0 11 |  b = good
+

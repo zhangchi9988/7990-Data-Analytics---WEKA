@@ -1,0 +1,58 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 15 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     labor-neg-data
+Instances:    57
+Attributes:   17
+              duration
+              wage-increase-first-year
+              wage-increase-second-year
+              wage-increase-third-year
+              cost-of-living-adjustment
+              working-hours
+              pension
+              standby-pay
+              shift-differential
+              education-allowance
+              statutory-holidays
+              vacation
+              longterm-disability-assistance
+              contribution-to-dental-plan
+              bereavement-assistance
+              contribution-to-health-plan
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 15 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          46               80.7018 %
+Incorrectly Classified Instances        11               19.2982 %
+Kappa statistic                          0.5505
+Mean absolute error                      0.3274
+Root mean squared error                  0.3735
+Relative absolute error                 71.5612 %
+Root relative squared error             78.2166 %
+Total Number of Instances               57     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.600    0.081    0.800      0.600    0.686      0.562    0.888     0.828     bad
+                 0.919    0.400    0.810      0.919    0.861      0.562    0.888     0.908     good
+Weighted Avg.    0.807    0.288    0.806      0.807    0.799      0.562    0.888     0.880     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 12  8 |  a = bad
+  3 34 |  b = good
+

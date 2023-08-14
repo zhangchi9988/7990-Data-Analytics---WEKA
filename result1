@@ -1,53 +1,93 @@
 === Run information ===
 
-Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 2 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
-Relation:     weather
-Instances:    14
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 2 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     iris
+Instances:    150
 Attributes:   5
-              outlook
-              temperature
-              humidity
-              windy
-Ignored:
-              play
-Test mode:    evaluate on training data
+              sepallength
+              sepalwidth
+              petallength
+              petalwidth
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: Iris-setosa, Iris-versicolor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0459 * sepallength
+ +      -0.5219 * sepalwidth
+ +       1.0031 * petallength
+ +       0.4641 * petalwidth
+ -       1.4491
+
+Number of kernel evaluations: 276 (75.135% cached)
+
+Classifier for classes: Iris-setosa, Iris-virginica
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0095 * sepallength
+ +      -0.1796 * sepalwidth
+ +       0.5367 * petallength
+ +       0.2946 * petalwidth
+ -       1.5143
+
+Number of kernel evaluations: 264 (61.404% cached)
+
+Classifier for classes: Iris-versicolor, Iris-virginica
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.5962 * sepallength
+ +      -0.972  * sepalwidth
+ +       2.0313 * petallength
+ +       2.008  * petalwidth
+ -       6.786 
+
+Number of kernel evaluations: 512 (73.851% cached)
 
 
-=== Clustering model (full training set) ===
 
+Time taken to build model: 0.01 seconds
 
-kMeans
-======
+=== Stratified cross-validation ===
+=== Summary ===
 
-Number of iterations: 3
-Within cluster sum of squared errors: 11.237456311387234
+Correctly Classified Instances         145               96.6667 %
+Incorrectly Classified Instances         5                3.3333 %
+Kappa statistic                          0.95  
+Mean absolute error                      0.2296
+Root mean squared error                  0.2854
+Relative absolute error                 51.6667 %
+Root relative squared error             60.553  %
+Total Number of Instances              150     
 
-Initial starting points (random):
+=== Detailed Accuracy By Class ===
 
-Cluster 0: rainy,75,80,FALSE
-Cluster 1: overcast,64,65,TRUE
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Iris-setosa
+                 0.940    0.020    0.959      0.940    0.949      0.925    0.960     0.922     Iris-versicolor
+                 0.960    0.030    0.941      0.960    0.950      0.925    0.975     0.924     Iris-virginica
+Weighted Avg.    0.967    0.017    0.967      0.967    0.967      0.950    0.978     0.948     
 
-Missing values globally replaced with mean/mode
+=== Confusion Matrix ===
 
-Final cluster centroids:
-                           Cluster#
-Attribute      Full Data          0          1
-                  (14.0)      (9.0)      (5.0)
-==============================================
-outlook            sunny      sunny   overcast
-temperature      73.5714    75.8889       69.4
-humidity         81.6429    84.1111       77.2
-windy              FALSE      FALSE       TRUE
-
-
-
-
-Time taken to build model (full training data) : 0 seconds
-
-=== Model and evaluation on training set ===
-
-Clustered Instances
-
-0       9 ( 64%)
-1       5 ( 36%)
+  a  b  c   <-- classified as
+ 50  0  0 |  a = Iris-setosa
+  0 47  3 |  b = Iris-versicolor
+  0  2 48 |  c = Iris-virginica
 
